@@ -33,9 +33,9 @@ def sign_in_iku():
                                                      'https': f'http://127.0.0.1:11223'})
         text = json.loads(response.text)
         if text['ret'] == 0:
-            send_to_wecom(text['msg'])
+            send_to_wecom('iku机场签到：' + text['msg'])
         if text['ret'] == 1:
-            send_to_wecom(text['msg'])
+            send_to_wecom('iku机场签到：' + text['msg'])
     except Exception as e:
         send_to_wecom('流量签到服务器错误：'+str(e))
 
